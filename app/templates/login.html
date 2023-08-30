@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Vanguardas Fitness - Sistema de Gerenciamento para Academias</title>
+</head>
+
+<body class="backgroundinicial">
+    <header>
+        <a href="{{ url_for('index') }}"><h1>Vanguardas Fitness</h1></a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('registro') }}">Registro</a></li>
+                <li><a href="{{ url_for('index') }}">inicio</a></li>
+                <li><a href="{{ url_for('aulas') }}">Aulas</a></li>
+                <li><a href="{{ url_for('financeiro') }}">Financeiro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="center">
+        <div class="header">
+            <h1>Conecte-se na sua conta</h1>
+        </div>
+
+        <form action="/login" method="POST">
+            <div class="input__container">
+                <label for="email">Email</label>
+                <input name="email" id="email" type="text" class="input__field">
+            </div>
+            <div class="input__container">
+                <label for="password">Senha</label>
+                <input name="password" id="password" type="password" class="input__field">
+            </div>
+            <div class="input__container">
+                <span>Não tem conta? <a href="Registro.html" style="color: blue" >Cadastre-se</a></span>
+                <input type="submit" value="Entrar" class="input__field">
+            </div>
+        </form>
+    </div>
+    
+    <br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

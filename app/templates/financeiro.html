@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Pagamentos - Vanguardas Fitness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/financeiro.css') }}"> <!-- Link para o arquivo de estilos CSS -->
+</head>
+
+<body class="backgroundinicial">
+    <div class="wrapper">
+        <header>
+            <a href="{{ url_for('index') }}"><h1>Vanguardas Fitness</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('registro') }}">Registro</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('aulas') }}">Aulas</a></li>
+                    <li><a href="{{ url_for('index') }}">inicio</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="center">
+            <section class="payment-form">
+                <h2>Cobrança de Valores</h2>
+                <form action="#">
+                    <label for="nome" style="color: grey">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="tipo-pagamento" style="color: grey">Tipo de Pagamento:</label>
+                    <select id="tipo-pagamento" name="tipo-pagamento" required>
+                        <option value="adesao">Adesão</option>
+                        <option value="mensalidade">Mensalidade</option>
+                        <option value="taxa-adicional">Taxa Adicional</option>
+                    </select>
+
+                    <label for="valor" style="color: grey">Valor:</label>
+                    <input type="number" id="valor" name="valor" step="0.01" required>
+
+                    <label for="email" style="color: grey">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <button type="submit">Realizar Pagamento</button>
+                </form>
+            </section>
+            <section class="notifications">
+                <h2>Notificações de Pagamento</h2>
+                <p>Receba notificações sobre pagamentos pendentes e lembretes para manter suas finanças em dia.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

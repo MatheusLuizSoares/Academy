@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">
+    <title>Vanguardas Fitness - Sistema de Gerenciamento para Academias</title>
+</head>
+
+<body class="backgroundinicial">
+    <header>
+        <a href="{{ url_for('index') }}"><h1>Vanguardas Fitness</h1></a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('index') }}">inicio</a></li>
+                <li><a href="{{ url_for('aulas') }}">Aulas</a></li>
+                <li><a href="{{ url_for('financeiro') }}">Financeiro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="center">
+    <br><br><br> <br>
+    <h1>Cadastre-se</h1>
+    <br>
+
+    <form action="/signin" method="POST" enctype="multipart/form-data" class="input__fo">
+        <div class="input__container">
+            <label for="name">Nome</label>
+            <input class="input__field" name="name" id="name" type="text">
+        </div>
+        <div class="input__container">
+            <label for="email">Email</label>
+            <input class="input__field" name="email" id="email" type="text">
+        </div>
+        <div class="input__container">
+            <label for="cpf">CPF</label>
+            <input class="input__field" name="cpf" id="cpf" type="text">
+        </div>
+        <div class="input__container">
+            <label for="birth_date">Data de nascimento</label>
+            <input class="input__field" type="date" name="birth_date" id="birth_date">
+        </div>
+        <div class="input__container">
+            <label for="photo">Foto de perfil</label>
+            <input class="input__field" type="file" name="photo" id="photo">
+        </div>
+        <div class="input__container">
+            <label for="password">Senha</label>
+            <input class="input__field" name="password" id="password" type="password">
+        </div>
+        <div class="input__container">
+            <span>Já tem conta? <a href="./login.html"  style="color: blue">Faça login</a></span>
+            <input class="input__field" type="submit" value="Cadastrar">
+        </div>
+    </form>
+</div>
+    <br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
