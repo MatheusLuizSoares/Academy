@@ -15,7 +15,7 @@ def contato():
 
 @app.route('/registro')
 def registro():
-    return render_template("Registro.html")
+    return render_template("registro.html")
 
 @app.route('/login')
 def login():
