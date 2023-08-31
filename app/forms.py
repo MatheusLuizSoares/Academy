@@ -4,6 +4,6 @@ from wtforms.validators import DataRequired
 
 class Cadastro(FlaskForm):
     nome = StringField('nome', validators = [DataRequired()] )
-    email = EmailField
-    password = PasswordField
-    
+    email = EmailField('email', validators = [DataRequired()] )
+    password = PasswordField('password', validators = [DataRequired()] )
+    enviar = SubmitField('enviar')
