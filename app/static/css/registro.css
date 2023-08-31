@@ -41,6 +41,11 @@ header h1 {
   margin: 0;
 }
 
+header a {
+  text-decoration: none;
+  color: white
+  }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -70,6 +75,8 @@ nav a {
   /* Amarelo */
   color: black;
   cursor: pointer;
+  text-align: center;
+  align-items: center;
 }
 
 footer {
@@ -111,4 +118,9 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.alinhar{
+  text-align: center;
+  align-items: center;
 }
