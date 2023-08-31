@@ -14,14 +14,14 @@ def index():
 def registro():
     return render_template("registro.html")
 
-@app.route('/registro', methods=['POST'])
-def registro():
-    cadastro = Cadastro()
-    nome = Cadastro.nome.date
-    email = Cadastro.email.date
-    senha = Cadastro.senha.date
+# @app.route('/registro', methods=['POST'])
+# def registro():
+#     # cadastro = Cadastro()
+#     # nome = Cadastro.nome.date
+#     # email = Cadastro.email.date
+#     # senha = Cadastro.senha.date
 
-    return render_template('caastro.html', cadastro = cadastro)
+#     return render_template('cadastro.html', cadastro = cadastro)
 
 
 
