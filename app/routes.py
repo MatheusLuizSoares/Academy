@@ -1,21 +1,29 @@
-from flask import Flask, render_template
+from app import app
+from flask import render_template
+from app.forms import Cadastro
 
-app = Flask(__name__)
+
 
 @app.route('/')
 @app.route('/index')
 def index():
-    nome = "Matheus"
-    dados = "SENAC"
-    return render_template('index.html', nome=nome, dados=dados)
+    return render_template("index.html")
 
-@app.route('/contato')
-def contato():
-    return render_template('contato.html')
 
-@app.route('/registro')
+@app.route('/registro', methods=['GET'])
 def registro():
     return render_template("registro.html")
+
+@app.route('/registro', methods=['POST'])
+def registro():
+    cadastro = Cadastro()
+    nome = Cadastro.nome.date
+    email = Cadastro.email.date
+    senha = Cadastro.senha.date
+
+    return render_template('caastro.html', cadastro = cadastro)
+
+
 
 @app.route('/login')
 def login():
