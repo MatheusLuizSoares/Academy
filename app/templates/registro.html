@@ -27,8 +27,14 @@
         <br><br><br> <br>
         <h1>Cadastre-se</h1>
         <br>
-
-        <form action="/registro" method="POST" class="input__fo">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert"> {{ message }} </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <form action="/registro" method="GET" class="input__fo">
             <div class="input__container">
                 <label for="nome">Nome</label>
                 <!-- <input class="input__field" name="name" id="name" type="text"> -->

@@ -79,6 +79,16 @@ nav a {
   align-items: center;
 }
 
+
+.alert {
+    background-color: #FFD700; /* Amarelo escuro */
+    color: #333; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+
 footer {
   background-color: #333;
   color: white;
