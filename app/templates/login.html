@@ -25,6 +25,13 @@
         <div class="header">
             <h1>Conecte-se na sua conta</h1>
         </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert"> {{ message }} </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 
         <form action="/login" method="GET">
             <div class="input__container">
