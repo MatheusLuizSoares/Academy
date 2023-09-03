@@ -11,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///academy.db"
 db = SQLAlchemy(app)
 migrate = Migrate(app ,db)
 
-from app import routes
+
 
 
 

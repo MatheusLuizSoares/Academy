@@ -20,5 +20,6 @@ class TblAulas(db.Model):  # tbl_aulas
     horario = db.Column(db.Time, nullable=True)
 
 
+
 def __repr__(self):
     return "Criando o Cadastro de usuário"

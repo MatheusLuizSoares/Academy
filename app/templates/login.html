@@ -29,13 +29,16 @@
         <form action="/login" method="GET">
             <div class="input__container">
                 <label for="email">Email</label>
-                <input name="email" id="email" type="text" class="input__field">
+                <!-- <input name="email" id="email" type="text" class="input__field"> -->
+                {{login.email(id="email", type="text", class="input__field")}}
             </div>
             <div class="input__container">
                 <label for="password">Senha</label>
-                <input name="password" id="password" type="password" class="input__field">
+                <!-- <input name="password" id="password" type="password" class="input__field"> -->
+                {{login.senha(id="password", type="password", class="input__field")}}
                 <br><br>
-                <input type="submit" value="Entrar" class="input__field">
+                <!-- <input type="submit" value="Entrar" class="input__field"> -->
+                {{login.enviar(type="submit", value="Entrar", class="input__field")}}
             </div>
             <div class="input__container">
                 <span>Não tem conta? <a href="/registro" style="color: blue" >Cadastre-se</a></span>
