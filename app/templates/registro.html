@@ -35,10 +35,11 @@
             {% endif %}
             {% endwith %}
         <form action="/registro" method="GET" class="input__fo">
+            {{ registro.hidden_tag() }}
             <div class="input__container">
                 <label for="nome">Nome</label>
                 <!-- <input class="input__field" name="name" id="name" type="text"> -->
-                {{ registro.nome(class="input__field", id="name", type="text", placeholder="Nome...") }}
+                {{ registro.nome(class="input__field", id="nome", type="text", placeholder="Nome...") }}
             </div>
             <div class="input__container">
                 <label for="email">Email</label>
