@@ -69,9 +69,10 @@ def usuario():
 def financeiro():
     return render_template('financeiro.html')
 
-@app.route('/dados')
+@app.route('/dados/<int:id>')
 def dados():
-    usuario = TblCadastro.query.all()
+    usuario = TblCadastro.query.filter_by(id = id).all #first() query.get(id)
+    
     return render_template("dados.html", usuario = usuario)
 
 @app.route('/change')
