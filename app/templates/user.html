@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="{{url_for('static',filename='css/estilo.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Vanguardas Fitness - Sistema de Gerenciamento para Academias</title>
 </head>
-<body>
-  <nav>
-  <a href="/aulas">Registro</a>
-  <a href="/editar"></a>
-</nav>
-<section class="features" >
-  <div class="feature background1">
-      
-      <br><br>
-      <button class="button">Agendamento de Aulas</button>
 
-  </div>
-  <div class="feature background2">
-      
-      <br><br>
-      <button class="button">Acompanhamento de Progresso</button>
+<body class="backgroundinicial">
+    <header>
+        <a href="/index"><h1>Vanguardas Fitness</h1></a>
+        <nav> 
+            <ul>
+                <li><a href="/delete">Excluir conta</a></li>
+                <li><a href="/change">Alterar senha</a></li>
+                <li><a href="/index">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  </div>
-  <div class="feature background3">
-      
-      <br><br>
-      <button class="button">Gestão de Pagamentos</button>
+    <section class="features" >
+      <div class="feature background1">
+          
+          <br><br>
+          <button class="button">Agendamento de Aulas</button>
+    
+      </div>
+      <div class="feature background2">
+          
+          <br><br>
+          <button class="button">Acompanhamento de Progresso</button>
+    
+      </div>
+      <div class="feature background3">
+          
+          <br><br>
+          <button class="button">Gestão de Pagamentos</button>
+    
+      </div>
+    </section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br  
+<footer>
+    <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>
+</footer>
 
-  </div>
-</section>
 
 </body>
+
 </html>
