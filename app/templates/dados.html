@@ -22,15 +22,17 @@
         </nav>
     </header>
 
+    <session>
+        <h2> Usuários do Banco de Dados</h2>
+        {% for u in usuario %}
+        <div>
+            Nome: {{u.nome}} <br>
+            Email: {{u.email}} <br>
+            Senha: {{u.senha}} <br>
+            <br><br>
+        </div>
 
-    <h2> Usuaários do Banco de Dados</h2>
-    {% for u in usuario %}
-    <div>
-        Nome: {{u.nome}} <br>
-        Email: {{u.email}} <br>
-        Senha: {{u.senha}} <br>
-        <br><br>
-    </div>
+    </session>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer>
         <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>

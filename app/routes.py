@@ -46,7 +46,7 @@ def login():
         usuario = TblCadastro.query.filter_by(email=email).first()
        
 
-        if usuario and check_password_hash(usuario.senha, senha):
+        if usuario and bcrypt.check_password_hash(usuario.senha, senha):
             # Login bem-sucedido
             session['usuario_id'] = usuario.id # armazenado id na sessao
             flash('Login bem-sucedido!', 'success')
@@ -86,6 +86,6 @@ def deletar(id):
         if usuario:
             db.session.delete(usuario)
             db.session.commit()
-            return redirect('/dados')
+            return redirect('/user')
     
     return render_template("deletar.html")
