@@ -62,5 +62,22 @@ def aulas():
     return render_template("aulas.html")
 
 @app.route('/user')
-def financeiro():
+def usuario():
     return render_template("user.html")
+
+@app.route('/financeiro')
+def financeiro():
+    return render_template('financeiro.html')
+
+@app.route('/dados')
+def dados():
+    usuario = TblCadastro.query.all()
+    return render_template("dados.html", usuario = usuario)
+
+@app.route('/change')
+def alterar():
+    return render_template("change.html")
+
+@app.route('/deletar')
+def deletar():
+    return render_template("deletar.html")

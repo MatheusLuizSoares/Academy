@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <h2> Usuaários do Banco de Dados</h2>
+    {% for u in usuario %}
+        <div>
+            Nome: {{u.nome}} <br>
+            Email: {{u.email}} <br>
+            Senha: {{u.senha}} <br>
+            <br><br>
+        </div>
+    {% endfor %}
+
+{% endblock %}
