@@ -1,14 +1,42 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block conteudo %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Vanguardas Fitness - Sistema de Gerenciamento para Academias</title>
+</head>
+
+<body class="backgroundinicial">
+    <header>
+        <a href="/index">
+            <h1>Vanguardas Fitness</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/delete">Excluir conta</a></li>
+                <li><a href="/change">Alterar senha</a></li>
+                <li><a href="/index">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
     <h2> Usuaários do Banco de Dados</h2>
     {% for u in usuario %}
-        <div>
-            Nome: {{u.nome}} <br>
-            Email: {{u.email}} <br>
-            Senha: {{u.senha}} <br>
-            <br><br>
-        </div>
-    {% endfor %}
+    <div>
+        Nome: {{u.nome}} <br>
+        Email: {{u.email}} <br>
+        Senha: {{u.senha}} <br>
+        <br><br>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>
+    </footer>
 
-{% endblock %}
+
+</body>
+
+</html>

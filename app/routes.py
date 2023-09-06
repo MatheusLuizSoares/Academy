@@ -46,7 +46,7 @@ def login():
         usuario = TblCadastro.query.filter_by(email=email).first()
        
 
-        if usuario and check_password_hash(usuario.senha_hash, senha):
+        if usuario and check_password_hash(usuario.senha, senha):
             # Login bem-sucedido
             session['usuario_id'] = usuario.id # armazenado id na sessao
             flash('Login bem-sucedido!', 'success')
@@ -72,13 +72,20 @@ def financeiro():
 @app.route('/dados/<int:id>')
 def dados():
     usuario = TblCadastro.query.filter_by(id = id).all #first() query.get(id)
-    
+
     return render_template("dados.html", usuario = usuario)
 
 @app.route('/change')
 def alterar():
     return render_template("change.html")
 
-@app.route('/deletar')
-def deletar():
+@app.route('/deletar/<int:id>', methods = ["GET", 'POST'])
+def deletar(id):
+    usuario = TblCadastro.query.filter_by(id=id).first()
+    if request.method =="POST":
+        if usuario:
+            db.session.delete(usuario)
+            db.session.commit()
+            return redirect('/dados')
+    
     return render_template("deletar.html")
