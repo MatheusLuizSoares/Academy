@@ -1,12 +1,11 @@
-from app import app
+from app import app, db, bcrypt
 from flask import render_template, request, flash, redirect, url_for
 from app.forms import Registro, LoginForm
 from app.models import TblCadastro
-from app import db, bcript
-
 from werkzeug.security import check_password_hash
 
 session = db.session
+bcrypt
 
 
 @app.route('/')
@@ -23,7 +22,8 @@ def registro():
         nome = registro.nome.data
         email = registro.email.data
         senha = registro.senha.data
-        novo_cadastro = TblCadastro(nome=nome, email=email, senha=senha)
+        b_senha = bcrypt.generate_password_hash(senha).decode('utf-8')
+        novo_cadastro = TblCadastro(nome=nome, email=email, senha=b_senha)
         session.add(novo_cadastro)
         session.commit() 
 
@@ -50,7 +50,7 @@ def login():
             # Login bem-sucedido
             session['usuario_id'] = usuario.id # armazenado id na sessao
             flash('Login bem-sucedido!', 'success')
-            return redirect(url_for('user'))  # redirecionando para a página do usuário após o login
+            return redirect('/user')  # redirecionando para a página do usuário após o login
         else:
             flash('Credenciais inválidas. Tente novamente.', 'danger')
 
@@ -61,6 +61,6 @@ def login():
 def aulas():
     return render_template("aulas.html")
 
-@app.route('/financeiro')
+@app.route('/user')
 def financeiro():
-    return render_template("financeiro.html")
+    return render_template("user.html")
