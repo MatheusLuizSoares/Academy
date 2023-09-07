@@ -10,6 +10,12 @@ h1 {
 
 }
 
+.none {
+
+    text-decoration: none;
+  
+  }
+
 /* Estilos globais */
 body {
     font-family: Arial, sans-serif;

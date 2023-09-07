@@ -15,14 +15,15 @@
         </a>
         <nav>
             <ul>
-                <li><a href="/delete">Excluir conta</a></li>
+                <li><a href="/deletar">Excluir conta</a></li>
                 <li><a href="/change">Alterar senha</a></li>
+                <li><a href="/user">Voltar</a></li>
                 <li><a href="/index">Sair</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="alinhar">
         <h2> Usuários do Banco de Dados</h2>
         {% for u in usuario %}
         <div method = "POST">
@@ -30,6 +31,7 @@
             Email: {{u.email}} <br>
             Senha: {{u.senha}} <br>
             <br><br>
+        {% endfor %}
         </div>
 
     </main>

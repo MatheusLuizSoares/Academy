@@ -1,5 +1,5 @@
 from app import app, db, bcrypt
-from flask import render_template, request, flash, redirect, url_for,session
+from flask import render_template, request, flash, redirect, session
 from app.forms import Registro, LoginForm
 from app.models import TblCadastro
 
@@ -20,8 +20,8 @@ def registro():
         senha = registro.senha.data
         b_senha = bcrypt.generate_password_hash(senha).decode('utf-8')
         novo_cadastro = TblCadastro(nome=nome, email=email, senha=b_senha)
-        session.add(novo_cadastro)
-        session.commit() 
+        db.session.add(novo_cadastro)
+        db.session.commit() 
 
         flash("Usuário cadastrado com sucesso!")
         print(f"Usuário cadastrado: {nome}, {email}, {senha}")  # Mensagem de depuração
@@ -65,10 +65,9 @@ def usuario():
 def financeiro():
     return render_template('financeiro.html')
 
-@app.route('/dados/<int:id>', methods = ["GET", 'POST'])
+@app.route('/dados')
 def dados():
-    if request.method == "POST":
-        usuario = TblCadastro.query.filter_by(id = id).all #first() query.get(id)
+    usuario = TblCadastro.query.all() #first() query.get(id)
 
     return render_template("dados.html", usuario = usuario)
 
