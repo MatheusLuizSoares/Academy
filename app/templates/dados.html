@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -22,17 +22,17 @@
         </nav>
     </header>
 
-    <session>
+    <main>
         <h2> Usuários do Banco de Dados</h2>
         {% for u in usuario %}
-        <div>
+        <div method = "POST">
             Nome: {{u.nome}} <br>
             Email: {{u.email}} <br>
             Senha: {{u.senha}} <br>
             <br><br>
         </div>
 
-    </session>
+    </main>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer>
         <p>&copy; 2023 Vanguardas Fitness. Todos os direitos reservados.</p>

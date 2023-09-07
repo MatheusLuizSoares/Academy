@@ -1,13 +1,9 @@
 from app import app, db, bcrypt
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for,session
 from app.forms import Registro, LoginForm
 from app.models import TblCadastro
-from werkzeug.security import check_password_hash
 
-session = db.session
-bcrypt
-
-
+ 
 @app.route('/')
 @app.route('/index')
 def index():
@@ -47,7 +43,7 @@ def login():
        
 
         if usuario and bcrypt.check_password_hash(usuario.senha, senha):
-            # Login bem-sucedido
+            # Login bem-sucedido    
             session['usuario_id'] = usuario.id # armazenado id na sessao
             flash('Login bem-sucedido!', 'success')
             return redirect('/user')  # redirecionando para a página do usuário após o login
@@ -69,9 +65,10 @@ def usuario():
 def financeiro():
     return render_template('financeiro.html')
 
-@app.route('/dados/<int:id>')
+@app.route('/dados/<int:id>', methods = ["GET", 'POST'])
 def dados():
-    usuario = TblCadastro.query.filter_by(id = id).all #first() query.get(id)
+    if request.method == "POST":
+        usuario = TblCadastro.query.filter_by(id = id).all #first() query.get(id)
 
     return render_template("dados.html", usuario = usuario)
 
