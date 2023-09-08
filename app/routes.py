@@ -71,9 +71,30 @@ def dados():
 
     return render_template("dados.html", usuario = usuario)
 
-@app.route('/change')
-def alterar():
-    return render_template("change.html")
+@app.route('/dados/<int:id>')
+def dadosid(id):
+    usuario = TblCadastro.query.get(id) #first() query.get(id)
+
+    return render_template("dados.html", usuario = usuario)
+
+@app.route('/atualizar/<int:id>', methods = ['GET', 'POST'])
+def atualizar(id):
+    registro = Registro()
+    usuario = TblCadastro.query.get(id)
+    if request.method == 'POST':
+        if usuario:
+            db.session.delete(usuario)
+            db.session.commit()
+            nome = registro.nome.data
+            email = registro.email.data
+            senha = registro.senha.data
+            b_senha = bcrypt.generate_password_hash(senha).decode('utf-8')
+            usuario = TblCadastro(nome=nome, email=email, senha=b_senha)
+            db.session.add(usuario)
+            db.session.commit() 
+            return redirect (f'/dados/{usuario.id}')
+        return f"Usuario com id = {id} Não existe!"
+    return render_template("atualizar.html", registro = registro)
 
 @app.route('/deletar/<int:id>', methods = ["GET", 'POST'])
 def deletar(id):
