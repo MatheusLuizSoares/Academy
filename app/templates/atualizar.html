@@ -20,25 +20,25 @@
         </nav>
     </header>
 
-    <form action="/atualizar" method="POST" class="input__fo">
-        {{ registro.hidden_tag() }}
+    <form action="" method="POST" class="input__fo">
+        
         <div class="input__container">
             <label for="nome">Nome</label>
-            <!-- <input class="input__field" name="name" id="name" type="text"> -->
-            {{ registro.nome(class="input__field", id="nome", type="text", placeholder="Nome...") }}
+            <input class="input__field" name="name" id="name" type="text" value = "{{ usuario.nome }}" placeholder="Nome...">
+            
         </div>
         <div class="input__container">
             <label for="email">Email</label>
-            <!-- <input class="input__field" name="email" id="email" type="text"> -->
-            {{registro.email(class="input__field", id="email", type="text", placeholder="Email...")}}
+            <input class="input__field" name="email" id="email" type="text" value = "{{usuario.email}}" placeholder="Email...">
+            
         </div>
         <div class="input__container">
             <label for="password">Senha</label>
-            <!-- <input class="input__field" name="password" placeholder="password" type="password"> -->
-            {{registro.senha (class="input__field", placeholder="Senha...", type="Password")}}
+            <input class="input__field" name="senha" placeholder="password" type="password" placeholder="Senha..." value = "{{usuario.senha}}">
+            
             <br><br>
-            <!-- <input class="input__field" type="submit" value="Cadastrar"> -->
-            {{registro.enviar( class="input__field", type="submit", value="Cadastrar")}}
+            <input class="input__field" type="submit" value="Atualizar">
+           
         </div>
     </form>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
